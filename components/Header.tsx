@@ -50,7 +50,7 @@ const Header: React.FC = () => {
               key={item.path} 
               to={item.path}
               className={({ isActive }) => 
-                `text-sm font-semibold transition-colors hover:text-brand-blue ${isActive ? 'text-brand-blue' : 'text-brand-navy'}`
+                `text-sm font-semibold transition-colors hover:text-brand-blue whitespace-nowrap ${isActive ? 'text-brand-blue' : 'text-brand-navy'}`
               }
             >
               {item.label}
