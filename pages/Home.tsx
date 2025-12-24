@@ -142,7 +142,7 @@ const Home: React.FC = () => {
                      </div>
                      <div>
                         <p className="text-lg font-bold text-white leading-tight">Operating since 1983</p>
-                        <p className="text-sm text-blue-200 mt-1 leading-snug">40+ years of trusted service in Sungai Petani.</p>
+                        <p className="text-sm text-blue-200 mt-1 leading-snug">40+ years of trusted service in Sungai Petani, Kedah.</p>
                      </div>
                   </div>
 
