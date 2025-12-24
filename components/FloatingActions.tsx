@@ -5,10 +5,10 @@ const FloatingActions: React.FC = () => {
   const whatsappLink = "https://wa.me/60124107554";
 
   return (
-    <div className="fixed z-50 flex flex-row gap-3 md:flex-col bottom-4 right-4 md:bottom-8 md:right-8 items-end justify-center w-full md:w-auto px-4 md:px-0 pointer-events-none">
+    <div className="fixed z-50 flex flex-row gap-3 md:flex-col bottom-4 right-4 md:bottom-8 md:right-8 items-end justify-end pointer-events-none">
       
       {/* Container for buttons to enable pointer events only on buttons */}
-      <div className="flex flex-row md:flex-col gap-3 pointer-events-auto mx-auto md:mx-0">
+      <div className="flex flex-row md:flex-col gap-3 pointer-events-auto">
         
         {/* WhatsApp */}
         <a
