@@ -39,7 +39,7 @@ const FAQItem = ({ question, answer }: { question: string, answer: string }) => 
 const Home: React.FC = () => {
   const shopeeLink = "https://shopee.com.my/mavsss33?entryPoint=ShopBySearch&searchKeyword=veerappan";
   const lazadaLink = "https://s.lazada.com.my/s.GDdC9?dsource=share&laz_share_info=2355118494_103_1600_0_2355120494_null&laz_token=354ad6ed4ab37e4190b0e2fa2b4d9204";
-  const whatsappLink = "https://wa.me/60124107554";
+  const whatsappLink = "https://wa.me/60164392448";
 
   return (
     <>
@@ -600,7 +600,7 @@ const Home: React.FC = () => {
               </a>
               <a href={whatsappLink} className="flex items-center justify-center space-x-2 px-8 py-4 bg-green-500 text-white rounded-full font-bold hover:bg-green-600 transition-colors shadow-lg shadow-green-900/20">
                 <MessageCircle size={20} />
-                <span>WhatsApp +60 12-410 7554</span>
+                <span>WhatsApp +60 16-439 2448</span>
               </a>
             </div>
             

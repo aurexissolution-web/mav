@@ -45,7 +45,7 @@ const Footer: React.FC = () => {
               </li>
               <li className="flex items-center space-x-3 text-gray-400 text-sm">
                 <MessageCircle className="flex-shrink-0 w-4 h-4 text-brand-blue" />
-                <a href="https://wa.me/60124107554" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">+60 12-410 7554</a>
+                <a href="https://wa.me/60164392448" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">+60 16-439 2448</a>
               </li>
               <li className="flex items-center space-x-3 text-gray-400 text-sm">
                 <Mail className="flex-shrink-0 w-4 h-4 text-brand-blue" />

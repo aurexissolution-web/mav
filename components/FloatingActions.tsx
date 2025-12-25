@@ -2,7 +2,7 @@ import React from 'react';
 import { MessageCircle } from 'lucide-react';
 
 const FloatingActions: React.FC = () => {
-  const whatsappLink = "https://wa.me/60124107554";
+  const whatsappLink = "https://wa.me/60164392448";
 
   return (
     <div className="fixed z-50 flex flex-row gap-3 md:flex-col bottom-4 right-4 md:bottom-8 md:right-8 items-end justify-end pointer-events-none">

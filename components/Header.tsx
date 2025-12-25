@@ -24,7 +24,7 @@ const Header: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const whatsappLink = "https://wa.me/60124107554";
+  const whatsappLink = "https://wa.me/60164392448";
 
   return (
     <header className={`fixed w-full z-40 transition-all duration-300 ${scrolled ? 'bg-white shadow-md py-1' : 'bg-white/95 backdrop-blur-sm py-2'}`}>

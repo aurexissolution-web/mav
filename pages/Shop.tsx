@@ -14,7 +14,7 @@ const warehouseGallery = [
 ];
 
 const Shop: React.FC = () => {
-  const whatsappLink = "https://wa.me/60124107554";
+  const whatsappLink = "https://wa.me/60164392448";
 
   return (
     <div className="bg-gray-50 min-h-screen pb-20">

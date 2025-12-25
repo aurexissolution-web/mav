@@ -223,7 +223,7 @@ const FAQToggle: React.FC<{ question: string; answer: string }> = ({ question, a
 const ServiceDetail: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
   const navigate = useNavigate();
-  const whatsappLink = "https://wa.me/60124107554";
+  const whatsappLink = "https://wa.me/60164392448";
 
   // Redirect if service not found
   useEffect(() => {
