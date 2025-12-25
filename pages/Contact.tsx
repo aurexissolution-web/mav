@@ -197,7 +197,7 @@ const Contact: React.FC = () => {
                   href={mapDirectionsUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center space-x-2 bg-white/90 hover:bg-white text-brand-navy font-semibold px-5 py-2 rounded-full shadow-md transition-colors"
+                  className="inline-flex items-center space-x-2 bg-brand-blue hover:bg-blue-700 text-white font-semibold px-5 py-2 rounded-full shadow-md shadow-brand-blue/20 transition-colors"
                 >
                   <span>Get Directions</span>
                 </a>
