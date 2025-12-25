@@ -306,7 +306,7 @@ const ServiceDetail: React.FC = () => {
                   Depending on availability, we source from top global and local manufacturers to ensure you aren't left stranded.
                 </p>
                 <div className="flex flex-wrap gap-3">
-                  {['Toyota', 'Honda', 'Proton', 'Perodua', 'Nissan', 'Bosch', 'TRW', 'KYB'].map((brand) => (
+                  {['Amaron', 'ABM', '2K', 'Century', 'And More'].map((brand) => (
                     <span key={brand} className="bg-white px-4 py-2 rounded-lg text-sm font-bold text-slate-500 border border-gray-200 shadow-sm">
                       {brand}
                     </span>
