@@ -1,10 +1,15 @@
 import React from 'react';
-import { MapPin, Phone, MessageCircle, Mail, ShoppingBag, ShoppingCart, ExternalLink } from 'lucide-react';
+import { MapPin, Phone, MessageCircle, Mail, ShoppingBag, ShoppingCart, ExternalLink, Facebook, Instagram, Music2 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Footer: React.FC = () => {
   const shopeeLink = "https://shopee.com.my/mavsss33?entryPoint=ShopBySearch&searchKeyword=veerappan";
   const lazadaLink = "https://s.lazada.com.my/s.GDdC9?dsource=share&laz_share_info=2355118494_103_1600_0_2355120494_null&laz_token=354ad6ed4ab37e4190b0e2fa2b4d9204";
+  const socialLinks = [
+    { name: 'Facebook', href: 'https://www.facebook.com/p/MAVeerappan-Auto-Store-100057058075799/', icon: Facebook },
+    { name: 'TikTok', href: 'https://www.tiktok.com/@mav.veerappan', icon: Music2 },
+    { name: 'Instagram', href: 'https://www.tiktok.com/@mav.veerappan', icon: Instagram },
+  ];
 
   return (
     <footer className="bg-brand-navy text-white pt-16 pb-8">
@@ -17,6 +22,20 @@ const Footer: React.FC = () => {
             <p className="text-gray-400 text-sm leading-relaxed mb-4">
               Providing trusted auto spare parts and professional services since 1983. Quality, reliability, and customer satisfaction are our top priorities.
             </p>
+            <div className="flex flex-wrap gap-3">
+              {socialLinks.map(({ name, href, icon: Icon }) => (
+                <a
+                  key={name}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center space-x-2 px-3 py-2 bg-white/5 border border-white/10 rounded-full text-xs font-semibold text-gray-300 hover:text-white hover:bg-white/10 transition-colors"
+                >
+                  <Icon className="w-4 h-4" />
+                  <span>{name}</span>
+                </a>
+              ))}
+            </div>
           </div>
 
           {/* Quick Links */}
