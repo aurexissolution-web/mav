@@ -594,9 +594,9 @@ const Home: React.FC = () => {
             </p>
             
             <div className="flex flex-col sm:flex-row justify-center gap-4 mb-8">
-              <a href="tel:044231451" className="flex items-center justify-center space-x-2 px-8 py-4 bg-white text-brand-navy rounded-full font-bold hover:bg-gray-100 transition-colors">
+              <a href="tel:044212448" className="flex items-center justify-center space-x-2 px-8 py-4 bg-white text-brand-navy rounded-full font-bold hover:bg-gray-100 transition-colors">
                 <Phone size={20} />
-                <span>Call 04-4231451</span>
+                <span>Call 04-4212448</span>
               </a>
               <a href={whatsappLink} className="flex items-center justify-center space-x-2 px-8 py-4 bg-green-500 text-white rounded-full font-bold hover:bg-green-600 transition-colors shadow-lg shadow-green-900/20">
                 <MessageCircle size={20} />

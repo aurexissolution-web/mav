@@ -67,8 +67,8 @@ const Contact: React.FC = () => {
                   </div>
                   <div>
                     <h3 className="font-semibold text-brand-navy">Call Us</h3>
-                    <p className="text-slate-600 mb-1">04-4231451</p>
-                    <a href="tel:044231451" className="text-sm font-bold text-brand-blue hover:underline">Call Now</a>
+                    <p className="text-slate-600 mb-1">04-4212448</p>
+                    <a href="tel:044212448" className="text-sm font-bold text-brand-blue hover:underline">Call Now</a>
                   </div>
                 </div>
 
