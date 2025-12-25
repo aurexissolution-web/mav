@@ -608,8 +608,8 @@ const Home: React.FC = () => {
               <p className="text-blue-200 text-sm font-medium">
                  Honest recommendations, clear pricing, and support even after installation.
               </p>
-              <p className="text-xs text-gray-500 uppercase tracking-widest font-semibold">
-                 Open Mon–Sat · Sungai Petani, Kedah
+              <p className="text-xs text-blue-100 tracking-[0.3em] font-semibold">
+                 EVERYDAY 9AM–6PM · SUNDAY CLOSED
               </p>
             </div>
           </FadeIn>
