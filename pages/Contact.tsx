@@ -11,9 +11,9 @@ const Contact: React.FC = () => {
   });
   const [submitted, setSubmitted] = useState(false);
 
-  const address = "No. 34, Jalan Sekerat, 08000 Sungai Petani, Kedah";
-  const mapEmbedUrl = `https://www.google.com/maps?q=${encodeURIComponent(address)}&output=embed`;
-  const mapDirectionsUrl = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(address)}`;
+  const mapQuery = "M.A. Veerappan Auto Part Sdn Bhd, 34 Jalan Sekerat, 08300, 08000 Sungai Petani, Kedah";
+  const mapEmbedUrl = `https://www.google.com/maps?q=${encodeURIComponent(mapQuery)}&output=embed`;
+  const mapDirectionsUrl = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(mapQuery)}`;
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
@@ -57,7 +57,7 @@ const Contact: React.FC = () => {
                   </div>
                   <div>
                     <h3 className="font-semibold text-brand-navy">Visit Us</h3>
-                    <p className="text-slate-600">No. 34, Jalan Sekerat,<br/>08000 Sungai Petani,<br/>Kedah Darul Aman, Malaysia</p>
+                    <p className="text-slate-600">34 Jalan Sekerat,<br/>08300, 08000 Sungai Petani,<br/>Kedah Darul Aman, Malaysia</p>
                   </div>
                 </div>
 
