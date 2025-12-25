@@ -11,6 +11,10 @@ const Contact: React.FC = () => {
   });
   const [submitted, setSubmitted] = useState(false);
 
+  const address = "No. 34, Jalan Sekerat, 08000 Sungai Petani, Kedah";
+  const mapEmbedUrl = `https://www.google.com/maps?q=${encodeURIComponent(address)}&output=embed`;
+  const mapDirectionsUrl = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(address)}`;
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
       ...formData,
@@ -177,7 +181,7 @@ const Contact: React.FC = () => {
             <div className="w-full h-96 bg-gray-200 rounded-2xl overflow-hidden shadow-inner relative group">
               {/* Google Maps Embed Placeholder - Using an image or iframe here typically */}
               <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3973.5937829281356!2d100.4883!3d5.6425!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x304b27c123456789%3A0xabcdef1234567890!2sJalan%20Sekerat%2C%20Sungai%20Petani%2C%20Kedah!5e0!3m2!1sen!2smy!4v1600000000000!5m2!1sen!2smy" 
+                src={mapEmbedUrl}
                 width="100%" 
                 height="100%" 
                 style={{ border: 0 }} 
@@ -188,6 +192,16 @@ const Contact: React.FC = () => {
                 title="Google Map Location"
               ></iframe>
               <div className="absolute inset-0 bg-brand-navy/10 pointer-events-none group-hover:bg-transparent transition-colors"></div>
+              <div className="absolute bottom-4 right-4 pointer-events-auto">
+                <a
+                  href={mapDirectionsUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center space-x-2 bg-white/90 hover:bg-white text-brand-navy font-semibold px-5 py-2 rounded-full shadow-md transition-colors"
+                >
+                  <span>Get Directions</span>
+                </a>
+              </div>
             </div>
           </FadeIn>
         </div>
