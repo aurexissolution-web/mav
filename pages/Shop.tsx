@@ -99,13 +99,13 @@ const Shop: React.FC = () => {
           </FadeIn>
           <div className="flex flex-wrap justify-center gap-4 md:gap-8">
             {[
-              "Fong Yong Marketing Sdn. Bhd.",
-              "Hup Foong Auto Supplies Sdn. Bhd.",
-              "New Hoong Fatt Auto Sdn. Bhd.",
-              "Poly Automotive Sdn. Bhd.",
-              "PRT Auto Parts Enterprise",
-              "Starlai Sdn. Bhd.",
-              "Sin Soon Tatt Auto Parts Sdn. Bhd."
+              "FONG YONG MARKETING SDN. BHD.",
+              "HUP FOONG AUTO SUPPLIES SDN. BHD.",
+              "NEW HOONG FATT AUTO SDN. BHD.",
+              "POLY AUTOMOTIVE SDN. BHD.",
+              "PRT AUTO PARTS ENTERPRISE",
+              "STARLAI SDN. BHD.",
+              "SIN SOON TATT AUTO PARTS SDN. BHD."
             ].map((supplier, idx) => (
               <FadeIn key={idx} delay={idx * 50}>
                 <div className="bg-gray-50 px-6 py-4 rounded-lg border border-gray-200 text-sm font-semibold text-slate-700 hover:bg-brand-light hover:text-brand-blue hover:border-brand-blue transition-colors text-center">
