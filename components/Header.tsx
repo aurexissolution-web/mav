@@ -37,8 +37,8 @@ const Header: React.FC = () => {
             className="flex items-center space-x-2 text-brand-navy font-bold text-lg md:text-xl lg:text-2xl leading-tight hover:text-brand-blue transition-colors"
           >
             <Logo className="w-14 h-14 md:w-18 md:h-18 shrink-0" />
-            <span>
-              M.A. Veerappan <span className="text-brand-blue font-extrabold">Auto</span>
+            <span className="text-base md:text-lg lg:text-xl leading-tight">
+              M.A.VEERAPPAN <span className="text-brand-blue font-extrabold">AUTO SDN BHD</span>
             </span>
           </NavLink>
         </div>
