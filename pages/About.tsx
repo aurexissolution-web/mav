@@ -8,9 +8,9 @@ import {
 
 const boardMembers = [
   { name: "M.A. Veerappan Chettiar", title: "Founder", image: "/founder.png" },
-  { name: "Arumugam A/L Veerappan", title: "Director", image: "/director-1.png" },
-  { name: "Magalingam A/L Veerappan", title: "Director", image: "/director-3.png" },
-  { name: "Shanmugam A/L Veerappan", title: "Director", image: "/director-2.png" },
+  { name: "Arumugam A/L Veerappan", title: "Director", image: "/director-3.png" },
+  { name: "Magalingam A/L Veerappan", title: "Director", image: "/director-2.png" },
+  { name: "Shanmugam A/L Veerappan", title: "Director", image: "/director-1.png" },
 ];
 
 const About: React.FC = () => {
