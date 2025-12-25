@@ -96,7 +96,9 @@ const servicesData: Record<string, ServiceData> = {
         "Engines & Gearboxes",
         "Alternators & Starters",
         "Body Panels (Doors, Bonnets)",
-        "Interior Consoles & Switches"
+        "Interior Consoles & Switches",
+        "Automotive Glass",
+        "Used Spare Parts"
       ]
     },
     process: [
