@@ -8,7 +8,7 @@ const Footer: React.FC = () => {
   const socialLinks = [
     { name: 'Facebook', href: 'https://www.facebook.com/p/MAVeerappan-Auto-Store-100057058075799/', icon: Facebook },
     { name: 'TikTok', href: 'https://www.tiktok.com/@mav.veerappan', icon: Music2 },
-    { name: 'Instagram', href: 'https://www.tiktok.com/@mav.veerappan', icon: Instagram },
+    { name: 'Instagram', href: 'https://www.instagram.com/mav.veerappan_auto/', icon: Instagram },
   ];
 
   return (
