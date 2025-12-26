@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 import { NavItem } from '../types';
 import Logo from './Logo';
 
@@ -9,6 +9,7 @@ const navItems: NavItem[] = [
   { label: 'About', path: '/about' },
   { label: 'Services', path: '/services' },
   { label: 'Shop & Warehouse', path: '/shop' },
+  { label: 'Products', path: '/products' },
   { label: 'Contact', path: '/contact' },
 ];
 
@@ -24,7 +25,7 @@ const Header: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const whatsappLink = "https://wa.me/60164392448";
+  const adminLoginUrl = "/admin";
 
   return (
     <header className={`fixed w-full z-40 transition-all duration-300 ${scrolled ? 'bg-white shadow-md py-1' : 'bg-white/95 backdrop-blur-sm py-2'}`}>
@@ -60,14 +61,12 @@ const Header: React.FC = () => {
 
         {/* Desktop CTA */}
         <div className="hidden lg:flex flex-1 justify-end items-center">
-          <a 
-            href={whatsappLink} 
-            target="_blank" 
-            rel="noopener noreferrer" 
+          <Link 
+            to={adminLoginUrl} 
             className="bg-brand-blue hover:bg-blue-700 text-white px-5 py-2 rounded-full text-sm font-bold shadow-sm transition-all hover:shadow-md"
           >
-            Get Parts Now
-          </a>
+            Welcome Back
+          </Link>
         </div>
 
         {/* Mobile Menu Button */}
@@ -95,14 +94,13 @@ const Header: React.FC = () => {
             </NavLink>
           ))}
           <div className="pt-2">
-             <a 
-               href={whatsappLink} 
-               target="_blank" 
-               rel="noopener noreferrer" 
-               className="flex justify-center items-center w-full bg-brand-blue hover:bg-blue-700 text-white px-4 py-3 rounded-full text-base font-bold shadow-sm transition-all"
-             >
-                Get Parts Now
-              </a>
+            <Link 
+              to={adminLoginUrl} 
+              className="flex justify-center items-center w-full bg-brand-blue hover:bg-blue-700 text-white px-4 py-3 rounded-full text-base font-bold shadow-sm transition-all"
+              onClick={() => setIsOpen(false)}
+            >
+              Welcome Back
+            </Link>
           </div>
         </div>
       )}
