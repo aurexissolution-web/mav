@@ -19,6 +19,8 @@ interface ServiceData {
   };
   process: { title: string; desc: string; icon: React.ReactNode }[];
   faqs: { q: string; a: string }[];
+  brands?: string[];
+  brandDescription?: string;
 }
 
 // --- Data Content ---
@@ -196,7 +198,9 @@ const servicesData: Record<string, ServiceData> = {
       { q: "Do you do trade-ins?", a: "Yes, we take in your old battery for a trade-in discount on the new one." },
       { q: "My car can't start. Can you come to me?", a: "We primarily offer installation at our shop, but call us to check availability for nearby rescue." },
       { q: "What brands do you have?", a: "We stock reliable brands like Century, Yokobatt, and GP." }
-    ]
+    ],
+    brands: ['Amaron', 'ABM', '2K', 'Century', 'And More'],
+    brandDescription: "We stock fresh, high-performance batteries from trusted OEM and aftermarket brands so you leave with confident starts every time."
   }
 };
 
@@ -305,10 +309,10 @@ const ServiceDetail: React.FC = () => {
              <FadeIn delay={200} className="bg-brand-light rounded-3xl p-8 lg:p-12 border border-blue-100">
                 <h3 className="text-xl font-bold text-brand-navy mb-4">Brands We Trust</h3>
                 <p className="text-slate-600 mb-6">
-                  Depending on availability, we source from top global and local manufacturers to ensure you aren't left stranded.
+                  {servicesData[slug]?.brandDescription ?? "Depending on availability, we source from top global and local manufacturers to ensure you aren't left stranded."}
                 </p>
                 <div className="flex flex-wrap gap-3">
-                  {['Amaron', 'ABM', '2K', 'Century', 'And More'].map((brand) => (
+                  {(servicesData[slug]?.brands ?? ['Toyota', 'Honda', 'Proton', 'Perodua', 'Nissan']).map((brand) => (
                     <span key={brand} className="bg-white px-4 py-2 rounded-lg text-sm font-bold text-slate-500 border border-gray-200 shadow-sm">
                       {brand}
                     </span>
