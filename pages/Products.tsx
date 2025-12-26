@@ -199,10 +199,10 @@ const Products: React.FC = () => {
               WhatsApp Parts Desk
             </a>
             <a
-              href="/contact"
+              href="tel:+6044415123"
               className="inline-flex items-center justify-center gap-2 rounded-full border border-white/60 text-white font-semibold px-6 py-3 hover:bg-white/10 transition-colors"
             >
-              Contact our team
+              Call our team
             </a>
           </div>
         </FadeIn>
