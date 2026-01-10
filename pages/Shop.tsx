@@ -3,14 +3,14 @@ import FadeIn from '../components/FadeIn';
 
 const shopGallery = [
   { src: '/shop-1.png', alt: 'Shop front exterior' },
-  { src: '/shop-2.png', alt: 'Customer service counters' },
-  { src: 'https://picsum.photos/800/600?random=31', alt: 'Auto parts display shelves' },
+  { src: '/customer-service-counter.jpeg', alt: 'Customer service counter' },
+  { src: '/3.png', alt: 'Auto parts display shelves' },
 ];
 
 const warehouseGallery = [
-  { src: '/shop-2.png', alt: 'Warehouse interior overview' },
-  { src: 'https://picsum.photos/800/600?random=52', alt: 'Organized inventory racks' },
-  { src: 'https://picsum.photos/800/600?random=53', alt: 'Parts storage area' },
+  { src: '/auto-parts-display.jpeg', alt: 'Auto parts display shelves' },
+  { src: '/45.jpeg', alt: 'Warehouse inventory racks' },
+  { src: '/warehouse-office.jpeg', alt: 'Storage area' },
 ];
 
 const Shop: React.FC = () => {

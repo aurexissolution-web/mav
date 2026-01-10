@@ -6,7 +6,7 @@ const Footer: React.FC = () => {
   const shopeeLink = "https://shopee.com.my/mavsss33?entryPoint=ShopBySearch&searchKeyword=veerappan";
   const lazadaLink = "https://s.lazada.com.my/s.GDdC9?dsource=share&laz_share_info=2355118494_103_1600_0_2355120494_null&laz_token=354ad6ed4ab37e4190b0e2fa2b4d9204";
   const socialLinks = [
-    { name: 'Facebook', href: 'https://www.facebook.com/p/MAVeerappan-Auto-Store-100057058075799/', icon: Facebook },
+    { name: 'Facebook', href: 'https://www.facebook.com/sharavanan.sara.716', icon: Facebook },
     { name: 'TikTok', href: 'https://www.tiktok.com/@mav.veerappan', icon: Music2 },
     { name: 'Instagram', href: 'https://www.instagram.com/mav.veerappan_auto/', icon: Instagram },
   ];
