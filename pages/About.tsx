@@ -3,15 +3,58 @@ import FadeIn from '../components/FadeIn';
 import { 
   Clock, MapPin, Wrench, ThumbsUp, 
   Calendar, TrendingUp, Award, 
-  Eye, Target, CheckCircle2 
+  Eye, Target, CheckCircle2, Recycle,
+  ArchiveRestore, Package
 } from 'lucide-react';
 
-const boardMembers = [
-  { name: "M.A. Veerappan Chettiar", title: "Founder", image: "/founder.png" },
-  { name: "Arumugam A/L Veerappan", title: "Director", image: "/director-3.png" },
-  { name: "Magalingam A/L Veerappan", title: "Director", image: "/director-2.png" },
+const founder = { name: "M.A. Veerappan Chettiar", title: "Founder", image: "/founder.png" };
+
+const directorMembers = [
   { name: "Shanmugam A/L Veerappan", title: "Director", image: "/director-1.png" },
+  { name: "Arumugam A/L Veerappan", title: "Director", image: "/director-3.png" },
+  { name: "Magalingam A/L Veerappan", title: "Former Director", image: "/director-2.png" },
+  { name: "Awaiting Announcement", title: "Director", image: "", placeholder: true },
 ];
+
+const historyEntries = [
+  {
+    year: "1951",
+    title: "Humble Beginnings",
+    description: "Family-run used bottle recycling hub that mastered material sorting, logistics, and the value of reuse.",
+    icon: <Recycle className="w-5 h-5" />,
+    accent: "from-emerald-100 to-emerald-200 text-emerald-700"
+  },
+  {
+    year: "1965",
+    title: "Scrap & Secondhand",
+    description: "Expanded into “barang-barang lusuh”, sourcing and trading quality scrap goods across Malaysia and nearby regions.",
+    icon: <ArchiveRestore className="w-5 h-5" />,
+    accent: "from-amber-100 to-amber-200 text-amber-700"
+  },
+  {
+    year: "1983",
+    title: "Used Auto Parts",
+    description: "Shifted into the automotive aftermarket, supplying trusted used components to workshops and vehicle owners.",
+    icon: <Wrench className="w-5 h-5" />,
+    accent: "from-blue-100 to-blue-200 text-brand-blue"
+  },
+  {
+    year: "1990",
+    title: "New Parts Distribution",
+    description: "Partnered with manufacturers to stock brand-new OEM and aftermarket parts for mechanics and motorists nationwide.",
+    icon: <Package className="w-5 h-5" />,
+    accent: "from-purple-100 to-purple-200 text-purple-700"
+  }
+];
+
+const summaryRows = [
+  { year: "1951", focus: "Used bottle recycling" },
+  { year: "1965", focus: "Scrap materials & secondhand goods (\"barang-barang lusuh\")" },
+  { year: "1983", focus: "Dealer in used auto parts" },
+  { year: "1990", focus: "Dealer in new auto parts" }
+];
+
+const legacyCopy = `From recycling bottles to becoming a respected auto parts dealer, M.A. Veerappan Auto Sdn Bhd has transformed over seven decades by anticipating market needs, diversifying boldly, and cultivating loyal relationships with customers and suppliers.`;
 
 const About: React.FC = () => {
   return (
@@ -28,25 +71,32 @@ const About: React.FC = () => {
       <div className="container mx-auto px-4 md:px-6 -mt-8">
         
         {/* 1. Intro Section: Split into 2 Columns */}
-        <div className="grid lg:grid-cols-3 gap-8 mb-16">
+        <div className="flex flex-col lg:flex-row gap-8 mb-16">
           {/* Left: Story */}
-          <FadeIn className="lg:col-span-2 bg-white rounded-xl shadow-lg p-8 md:p-12">
-            <h2 className="text-2xl font-bold text-brand-navy mb-6">About M.A. Veerappan Auto Sdn Bhd</h2>
-            <div className="prose prose-slate max-w-none text-slate-600 space-y-4 leading-relaxed">
+          <FadeIn className="lg:flex-[2] bg-white rounded-2xl shadow-xl p-8 md:p-12 border border-gray-100 relative overflow-hidden">
+            <div className="absolute inset-y-0 right-0 w-40 bg-gradient-to-b from-brand-light/20 to-transparent pointer-events-none"></div>
+            <h2 className="text-2xl font-bold text-brand-navy mb-4">About M.A. Veerappan Auto Sdn Bhd</h2>
+            <p className="text-base text-slate-500 mb-6">
+              M.A. Veerappan Auto Sdn Bhd began as a family recycling venture and has grown into a premier auto parts supplier headquartered in Sungai Petani, Kedah. Incorporated on 30 January 1990, the company now delivers both new and used parts nationwide with dependable service.
+            </p>
+            <div className="space-y-4 text-slate-600 leading-relaxed">
               <p>
-                Established in 1983 in Kedah, we began as a private firm dedicated to supplying high-quality auto spare parts and servicing a wide variety of vehicle brands and makes across Malaysia.
+                <strong className="text-brand-navy">1951 – Humble Beginnings:</strong> Started as a family operation recycling used bottles for factories and markets, building deep expertise in material sorting, logistics, and resource efficiency.
               </p>
               <p>
-                Over the decades, we have built a strong reputation for reliability and continuous success. Our growth is driven by our commitment to quality and the trust our customers place in us.
+                <strong className="text-brand-navy">1965 – Scrap Expansion:</strong> Branched into scrap materials and secondhand goods—<em>barang-barang lusuh</em>—forming sourcing networks across Malaysia for quality reuse.
               </p>
               <p>
-                We are proud to be staffed by a team of skilled technicians and mechanics who are passionate about delivering professional, efficient service, ensuring high customer satisfaction every time you visit.
+                <strong className="text-brand-navy">1983 – Used Auto Parts:</strong> Malaysia’s automotive boom prompted a move into supplying trusted used parts for mechanics, workshops, and vehicle owners.
+              </p>
+              <p>
+                <strong className="text-brand-navy">1990—Current – New Parts Growth:</strong> After incorporation, we expanded into new auto parts from top manufacturers while retaining used parts expertise. Operating from No. 34 Jalan Sekerat, Sungai Petani, we now serve DIY enthusiasts and professionals with parts for vehicles such as Datsun and offer fast shipping through Lazada, TikTok, Instagram, and Facebook.
               </p>
             </div>
           </FadeIn>
 
           {/* Right: Quick Facts Card */}
-          <FadeIn delay={200} className="bg-brand-blue text-white rounded-xl shadow-lg p-8 h-full flex flex-col justify-center relative overflow-hidden">
+          <FadeIn delay={200} className="bg-brand-blue text-white rounded-xl shadow-lg p-8 relative overflow-hidden lg:w-[360px] lg:flex-none self-start">
             {/* Background decoration */}
             <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2"></div>
             
@@ -84,39 +134,67 @@ const About: React.FC = () => {
           </FadeIn>
         </div>
 
-        {/* 2. Timeline Strip */}
+        {/* 2. Company History Timeline */}
         <FadeIn className="mb-16">
-          <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-8 md:p-12 relative">
-             <div className="absolute top-1/2 left-4 md:left-12 right-4 md:right-12 h-1 bg-blue-50 -translate-y-1/2 hidden md:block z-0"></div>
-             
-             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative z-10">
-                {/* Step 1 */}
-                <div className="bg-white p-4 text-center group">
-                  <div className="w-16 h-16 mx-auto bg-blue-50 text-brand-blue rounded-full flex items-center justify-center mb-4 group-hover:bg-brand-blue group-hover:text-white transition-colors border-4 border-white shadow-sm">
-                    <Calendar size={28} />
-                  </div>
-                  <h4 className="text-xl font-bold text-brand-navy mb-2">1983</h4>
-                  <p className="text-sm text-slate-600">Company founded as a private firm for auto spare parts & servicing.</p>
-                </div>
+          <div className="bg-white rounded-2xl shadow-md border border-gray-100 p-8 md:p-10">
+            <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+              <div>
+                <p className="text-xs uppercase tracking-[0.4em] text-brand-blue">Company Timeline</p>
+                <h3 className="text-2xl md:text-3xl font-bold text-brand-navy">Evolution of M.A. Veerappan Auto</h3>
+              </div>
+              <span className="text-sm text-slate-500 font-medium">1951 — Present</span>
+            </div>
 
-                {/* Step 2 */}
-                <div className="bg-white p-4 text-center group">
-                  <div className="w-16 h-16 mx-auto bg-blue-50 text-brand-blue rounded-full flex items-center justify-center mb-4 group-hover:bg-brand-blue group-hover:text-white transition-colors border-4 border-white shadow-sm">
-                    <TrendingUp size={28} />
+            <div className="relative mt-10">
+              <div className="hidden md:block absolute top-12 left-12 right-12 h-px bg-gradient-to-r from-transparent via-blue-50 to-transparent"></div>
+              <div className="grid grid-cols-1 md:grid-cols-4 gap-8 relative z-10">
+                {historyEntries.map((entry) => (
+                  <div key={entry.year} className="text-center flex flex-col items-center gap-3">
+                    <div className={`w-14 h-14 rounded-full bg-gradient-to-br ${entry.accent} flex items-center justify-center text-brand-navy shadow-md`}>
+                      {entry.icon}
+                    </div>
+                    <div>
+                      <p className="text-sm font-semibold text-brand-blue uppercase tracking-wide">{entry.year}</p>
+                      <h4 className="text-lg font-bold text-brand-navy">{entry.title}</h4>
+                      <p className="text-slate-600 text-sm mt-2 leading-relaxed">{entry.description}</p>
+                    </div>
                   </div>
-                  <h4 className="text-xl font-bold text-brand-navy mb-2">1990s</h4>
-                  <p className="text-sm text-slate-600">Expanded range of brands and vehicle makes.</p>
-                </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </FadeIn>
 
-                {/* Step 3 */}
-                <div className="bg-white p-4 text-center group">
-                  <div className="w-16 h-16 mx-auto bg-blue-50 text-brand-blue rounded-full flex items-center justify-center mb-4 group-hover:bg-brand-blue group-hover:text-white transition-colors border-4 border-white shadow-sm">
-                    <Award size={28} />
-                  </div>
-                  <h4 className="text-xl font-bold text-brand-navy mb-2">Today</h4>
-                  <p className="text-sm text-slate-600">Recognized spare parts and service provider with skilled technicians.</p>
+        {/* 2b. Legacy */}
+        <FadeIn className="mb-16">
+          <div className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-brand-navy via-brand-blue to-blue-500 text-white shadow-2xl p-8 md:p-12">
+            <div className="absolute inset-y-0 right-0 w-1/3 bg-white/5 blur-3xl opacity-60 pointer-events-none"></div>
+            <div className="relative z-10 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
+              <div className="max-w-xl space-y-4">
+                <p className="text-xs tracking-[0.5em] text-blue-200 uppercase">Legacy &amp; Reputation</p>
+                <h3 className="text-3xl md:text-4xl font-bold leading-tight">Seven Decades of Trust</h3>
+                <p className="text-blue-100 leading-relaxed">{legacyCopy}</p>
+                <div className="flex flex-wrap gap-3 pt-2">
+                  {["Resilience","Relationships","Reliability"].map((value) => (
+                    <span key={value} className="px-4 py-1 rounded-full border border-white/30 text-sm font-medium tracking-wide">
+                      {value}
+                    </span>
+                  ))}
                 </div>
-             </div>
+              </div>
+              <div className="grid sm:grid-cols-2 gap-4 lg:w-80">
+                <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-4 border border-white/20">
+                  <p className="text-sm uppercase tracking-widest text-blue-100">Years Strong</p>
+                  <p className="text-3xl font-bold">70+</p>
+                  <p className="text-sm text-blue-100 mt-1">Family legacy since 1951</p>
+                </div>
+                <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-4 border border-white/20">
+                  <p className="text-sm uppercase tracking-widest text-blue-100">Promise</p>
+                  <p className="text-3xl font-bold">100%</p>
+                  <p className="text-sm text-blue-100 mt-1">Customer-first service</p>
+                </div>
+              </div>
+            </div>
           </div>
         </FadeIn>
 
@@ -165,32 +243,116 @@ const About: React.FC = () => {
         {/* 5. Board Members */}
         <div className="mb-12">
           <FadeIn>
-            <h2 className="text-2xl font-bold text-brand-navy mb-8 text-center">Board of Directors</h2>
+            <h2 className="text-2xl font-bold text-brand-navy mb-5 text-center">Board of Directors</h2>
+            <p className="text-center text-slate-500 mb-8">
+              A heritage-led structure with our founder at the helm and directors leading key operations.
+            </p>
           </FadeIn>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {boardMembers.map((member, idx) => (
-              <FadeIn key={idx} delay={400 + (idx * 100)}>
-                <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100 text-center hover:shadow-md transition-shadow">
-                  {member.image ? (
-                    <img 
-                      src={member.image} 
-                      alt={`${member.name} portrait`} 
-                      className="w-24 h-24 object-cover rounded-full mx-auto mb-4 border-4 border-brand-blue/20 shadow-lg"
-                      loading="lazy"
-                      decoding="async"
-                    />
-                  ) : (
-                    <div className="w-20 h-20 bg-gray-100 rounded-full mx-auto mb-4 flex items-center justify-center text-gray-400 border border-gray-200">
-                      <span className="text-2xl font-bold">{member.name.charAt(0)}</span>
+
+          <div className="bg-white rounded-3xl shadow-md border border-gray-100 p-8 md:p-12">
+            {/* Founder Node */}
+            <div className="flex flex-col items-center">
+              <div className="w-32 h-32 rounded-full border-4 border-brand-blue/30 shadow-lg overflow-hidden flex items-center justify-center bg-white">
+                <img 
+                  src={founder.image}
+                  alt={`${founder.name} portrait`}
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <div className="text-center mt-4">
+                <h3 className="text-xl font-semibold text-brand-navy">{founder.name}</h3>
+                <p className="text-sm uppercase tracking-wide text-brand-blue">{founder.title}</p>
+              </div>
+              <div className="hidden md:block w-px h-12 bg-slate-200 mt-6"></div>
+            </div>
+
+            {/* Directors */}
+            <div className="relative mt-10">
+              <div className="hidden md:block absolute inset-x-6 top-0 h-0.5 bg-slate-200"></div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 pt-8">
+                {directorMembers.map((member, idx) => (
+                  <FadeIn key={member.name} delay={400 + (idx * 120)}>
+                    <div className="flex flex-col items-center text-center gap-3">
+                      <div className="hidden md:block w-px h-8 bg-slate-200"></div>
+                      <div
+                        className={`w-24 h-24 rounded-full border-4 ${
+                          member.placeholder
+                            ? 'border-dashed border-slate-300 text-slate-400 flex items-center justify-center font-semibold'
+                            : 'border-brand-blue/20 shadow-lg overflow-hidden'
+                        }`}
+                      >
+                        {member.image ? (
+                          <img
+                            src={member.image}
+                            alt={`${member.name} portrait`}
+                            className="w-full h-full object-cover"
+                            loading="lazy"
+                            decoding="async"
+                          />
+                        ) : (
+                          <span className="text-xs uppercase tracking-wide px-3 text-center">Awaiting Image</span>
+                        )}
+                      </div>
+                      <div>
+                        <p className="font-semibold text-brand-navy">{member.name}</p>
+                        <p className="text-sm uppercase tracking-wide text-brand-blue">{member.title}</p>
+                      </div>
                     </div>
-                  )}
-                  <h3 className="font-bold text-brand-navy mb-1">{member.name}</h3>
-                  <p className="text-brand-blue text-sm uppercase tracking-wide">{member.title}</p>
-                </div>
-              </FadeIn>
-            ))}
+                  </FadeIn>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
+
+        {/* 6. Testimonials Video */}
+        <FadeIn className="bg-gradient-to-r from-blue-50 via-white to-blue-50 rounded-3xl shadow-lg border border-blue-100 p-8 md:p-12">
+          <div className="flex flex-col lg:flex-row items-center gap-10">
+            <div className="lg:w-1/2 space-y-5">
+              <div className="inline-flex items-center gap-2 px-3 py-1 bg-blue-100/70 text-brand-blue text-xs font-semibold uppercase tracking-[0.4em] rounded-full">
+                Community Voices
+              </div>
+              <h2 className="text-3xl md:text-4xl font-bold text-brand-navy leading-tight">Look What People Say About Us!</h2>
+              <p className="text-slate-600 leading-relaxed">
+                Real stories shared by our customers inspire us to keep engineering better service every day. Watch how M.A. Veerappan Auto has helped Malaysian motorists stay on the road since the 1950s.
+              </p>
+              <div className="bg-white rounded-2xl border border-blue-100 p-4 shadow-sm">
+                <p className="text-brand-navy font-semibold text-lg">“The only spare parts shop I recommend. Honest prices and super helpful!”</p>
+                <div className="flex items-center gap-2 text-sm text-slate-500 mt-2">
+                  <div className="flex">
+                    {[...Array(5)].map((_, idx) => (
+                      <span key={idx} className="text-brand-accent">★</span>
+                    ))}
+                  </div>
+                  <span>4.9/5 average rating</span>
+                </div>
+              </div>
+              <div className="flex flex-wrap gap-3">
+                {["Authentic Parts","Trusted Since 1951","Customer-first Support"].map((tag) => (
+                  <span key={tag} className="px-4 py-2 bg-white text-brand-blue font-medium rounded-full border border-blue-100">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </div>
+            <div className="flex-1 w-full flex justify-center">
+              <div className="rounded-3xl overflow-hidden border-4 border-white shadow-2xl w-full max-w-[320px] md:max-w-[360px] bg-black">
+                <video
+                  controls
+                  playsInline
+                  preload="metadata"
+                  poster="/mav.png"
+                  className="w-full h-auto block"
+                >
+                  <source src="/ssstik.io_@mr_goy_1768477734870.mp4" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+            </div>
+          </div>
+        </FadeIn>
 
       </div>
     </div>
