@@ -169,7 +169,9 @@ const servicesData: Record<string, ServiceData> = {
       { q: "How long does replacement take?", a: "Usually 2-3 hours, including the time for the sealant to cure properly." },
       { q: "What documents do I need for a claim?", a: "Insurance policy, cover note, driver's license, and vehicle registration card." },
       { q: "Do you repair chips?", a: "We focus on replacement, but contact us to assess if a repair is possible." }
-    ]
+    ],
+    brandDescription: "Insurance Panel For:",
+    brands: ["RHB", "Allianz", "Pacific Insurance", "Pacific & Orient", "Tokio Marine", "And Others"]
   },
   'battery-solutions': {
     title: "Battery Solutions",
@@ -199,8 +201,78 @@ const servicesData: Record<string, ServiceData> = {
       { q: "My car can't start. Can you come to me?", a: "We primarily offer installation at our shop, but call us to check availability for nearby rescue." },
       { q: "What brands do you have?", a: "We stock reliable brands like Century, Yokobatt, and GP." }
     ],
-    brands: ['Amaron', 'ABM', '2K', 'Century', 'And More'],
+    brands: ['Amaron', 'ABM', 'DF', 'Century', 'And More'],
     brandDescription: "We stock fresh, high-performance batteries from trusted OEM and aftermarket brands so you leave with confident starts every time."
+  },
+  'workshop': {
+    title: "Workshop Services",
+    summary: "Professional installation partners for mechanical repairs, diagnostics, and preventive maintenance.",
+    icon: <Wrench className="w-10 h-10" />,
+    benefits: [
+      { title: "Certified Partners", desc: "We work with vetted workshops that specialize in Malaysian and Japanese vehicles." },
+      { title: "Transparent Pricing", desc: "Quotes are provided upfront so you always know the labour and parts cost." },
+      { title: "Convenient Scheduling", desc: "Book installation when you collect your parts—no more hunting for a mechanic." }
+    ],
+    offerings: {
+      text: "From basic maintenance to troubleshooting complex issues, our partner workshops have you covered:",
+      items: [
+        "Installation of purchased parts",
+        "Full diagnostic scans & troubleshooting",
+        "Brake, suspension, and steering repairs",
+        "Engine oil service & fluid changes",
+        "Air-con servicing and leak checks"
+      ]
+    },
+    process: [
+      { title: "Consult", desc: "Share the issue or the part you need installed.", icon: <MessageCircle size={24} /> },
+      { title: "Match", desc: "We connect you with the right workshop partner and confirm labour pricing.", icon: <ClipboardCheck size={24} /> },
+      { title: "Service", desc: "Drop off your vehicle for professional installation and final inspection.", icon: <CheckCircle2 size={24} /> }
+    ],
+    faqs: [
+      { q: "Do you provide warranty on labour?", a: "Yes, partner workshops offer workmanship warranty (duration varies by job)." },
+      { q: "Can I wait at the workshop?", a: "Most jobs can be completed same-day. Waiting areas are available depending on partner location." },
+      { q: "Do you handle insurance work?", a: "For selected repairs we can guide you through insurance claim steps—just speak with our team." }
+    ],
+    brands: [
+      "Parts Installation",
+      "Diagnostic Scans",
+      "Brake & Suspension",
+      "Engine & Fluid Service",
+      "Air-Con Repair"
+    ],
+    brandDescription: "Hands-on services we execute daily together with our in-house and partner workshops across Sungai Petani."
+  },
+  'buy-scrap-car': {
+    title: "Buy Scrap Cars",
+    summary: "We purchase accident, flood, or end-of-life vehicles for parts harvesting and environmentally responsible recycling.",
+    icon: <Truck className="w-10 h-10" />,
+    benefits: [
+      { title: "Fair Market Offers", desc: "Transparent valuations based on condition, model, and reusable components." },
+      { title: "Fast Collection", desc: "We arrange towing or on-site pickup across Kedah and surrounding states." },
+      { title: "Paperwork Assistance", desc: "Guidance on JPJ deregistration and disposal documentation." }
+    ],
+    offerings: {
+      text: "Turn your unusable vehicle into instant cash or credit towards new parts:",
+      items: [
+        "Accident / Total Loss Vehicles",
+        "Flood-Damaged Units",
+        "Non-Running Cars & Vans",
+        "Half-Cut & Chopped Vehicles",
+        "Commercial Vehicles & 4x4s"
+      ]
+    },
+    process: [
+      { title: "Share Details", desc: "Send photos, registration card, and condition summary via WhatsApp.", icon: <MessageCircle size={24} /> },
+      { title: "Receive Offer", desc: "We evaluate resale parts value and provide a written offer.", icon: <ClipboardCheck size={24} /> },
+      { title: "Pickup & Payment", desc: "We tow the vehicle, handle paperwork, and pay on the spot.", icon: <CheckCircle2 size={24} /> }
+    ],
+    faqs: [
+      { q: "Do you buy cars without road tax?", a: "Yes. Just ensure the registered owner is present or provides authorization." },
+      { q: "Can I trade in scrap value for parts credit?", a: "Absolutely—we can offset the amount against new or used parts." },
+      { q: "What areas do you cover?", a: "Primarily Kedah, Penang, Perlis, and northern Perak. Contact us for other locations." }
+    ],
+    brands: ["Accident Vehicles", "Flood Cars", "Non-Running Units", "Commercial Fleets"],
+    brandDescription: "Specialized recycling workflows that recover usable components and responsibly dispose of the rest."
   }
 };
 
@@ -241,6 +313,16 @@ const ServiceDetail: React.FC = () => {
   if (!slug || !servicesData[slug]) return null;
 
   const data = servicesData[slug];
+  const brandSectionTitle = slug === 'workshop'
+    ? "What We Do"
+    : slug === 'buy-scrap-car'
+      ? "What We Buy"
+      : "Brands We Trust";
+  const defaultBrands = slug === 'workshop'
+    ? ["Parts Installation", "Diagnostic Scans", "Brake & Suspension", "Engine & Fluid Service", "Air-Con Repair"]
+    : slug === 'buy-scrap-car'
+      ? ["Accident Vehicles", "Flood Cars", "Non-Running Units", "Commercial Fleets"]
+      : ['Toyota', 'Honda', 'Proton', 'Perodua', 'Nissan'];
 
   return (
     <div className="bg-white min-h-screen pb-20">
@@ -306,18 +388,29 @@ const ServiceDetail: React.FC = () => {
                  ))}
                </ul>
              </FadeIn>
-             <FadeIn delay={200} className="bg-brand-light rounded-3xl p-8 lg:p-12 border border-blue-100">
-                <h3 className="text-xl font-bold text-brand-navy mb-4">Brands We Trust</h3>
+             <FadeIn delay={200} className="bg-brand-light rounded-3xl p-8 lg:p-12 border border-blue-100 space-y-6">
+                <h3 className="text-xl font-bold text-brand-navy mb-4">{brandSectionTitle}</h3>
                 <p className="text-slate-600 mb-6">
                   {servicesData[slug]?.brandDescription ?? "Depending on availability, we source from top global and local manufacturers to ensure you aren't left stranded."}
                 </p>
                 <div className="flex flex-wrap gap-3">
-                  {(servicesData[slug]?.brands ?? ['Toyota', 'Honda', 'Proton', 'Perodua', 'Nissan']).map((brand) => (
+                  {(servicesData[slug]?.brands ?? defaultBrands).map((brand) => (
                     <span key={brand} className="bg-white px-4 py-2 rounded-lg text-sm font-bold text-slate-500 border border-gray-200 shadow-sm">
                       {brand}
                     </span>
                   ))}
                 </div>
+                {slug === 'battery-solutions' && (
+                  <a
+                    href="https://amaronmalaysia.com/find-your-battery/#search-bar"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center px-6 py-3 bg-brand-blue text-white font-semibold rounded-full shadow hover:bg-blue-700 transition-colors w-full md:w-auto"
+                  >
+                    Find Your Battery
+                    <ArrowRight size={18} className="ml-2" />
+                  </a>
+                )}
              </FadeIn>
           </div>
         </section>

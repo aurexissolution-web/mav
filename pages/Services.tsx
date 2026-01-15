@@ -1,6 +1,6 @@
 import React from 'react';
 import FadeIn from '../components/FadeIn';
-import { Settings, Shield, Battery, PenTool, CheckCircle, ArrowRight, ShieldCheck } from 'lucide-react';
+import { Settings, Shield, Battery, PenTool, CheckCircle, ArrowRight, ShieldCheck, Wrench, Truck } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Services: React.FC = () => {
@@ -59,6 +59,18 @@ const Services: React.FC = () => {
               desc: "Wide range of car batteries with installation services to get you moving again quickly.",
               icon: <Battery />,
               link: "/services/battery-solutions"
+            },
+            { 
+              title: "Workshop Services", 
+              desc: "Trusted partner workshops for installation, troubleshooting, and mechanical repairs done right.",
+              icon: <Wrench />,
+              link: "/services/workshop"
+            },
+            { 
+              title: "Buy Scrap Cars", 
+              desc: "We purchase accident or end-of-life vehicles for parts harvest and responsible recycling.",
+              icon: <Truck />,
+              link: "/services/buy-scrap-car"
             },
           ].map((service, idx) => (
             <FadeIn key={idx} delay={idx * 100} className="h-full">

@@ -10,7 +10,7 @@ const shopGallery = [
 const warehouseGallery = [
   { src: '/auto-parts-display.jpeg', alt: 'Auto parts display shelves' },
   { src: '/45.jpeg', alt: 'Warehouse inventory racks' },
-  { src: '/warehouse-office.jpeg', alt: 'Storage area' },
+  { src: '/c5cb039b-9210-41b2-bed6-4c6bcdcf0edc.JPG', alt: 'Axles and parts organized on warehouse racks' },
 ];
 
 const Shop: React.FC = () => {

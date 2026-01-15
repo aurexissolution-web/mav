@@ -96,20 +96,11 @@ const Home: React.FC = () => {
                   <div className="space-y-4">
                     <div className="bg-white/10 p-4 rounded-lg flex items-center space-x-4">
                       <div className="bg-blue-600 p-3 rounded-full">
-                        <Car className="text-white w-6 h-6" />
+                        <Package className="text-white w-6 h-6" />
                       </div>
                       <div>
-                        <h4 className="font-semibold text-white">Genuine Parts</h4>
-                        <p className="text-xs text-blue-200">Toyota, Honda, Proton, Perodua...</p>
-                      </div>
-                    </div>
-                    <div className="bg-white/10 p-4 rounded-lg flex items-center space-x-4">
-                      <div className="bg-blue-600 p-3 rounded-full">
-                        <ShieldCheck className="text-white w-6 h-6" />
-                      </div>
-                      <div>
-                        <h4 className="font-semibold text-white">Windscreen Specialist</h4>
-                        <p className="text-xs text-blue-200">Authorized Insurance Panel</p>
+                        <h4 className="font-semibold text-white">New Parts Inventory</h4>
+                        <p className="text-xs text-blue-200">Brand-new OEM & aftermarket stock.</p>
                       </div>
                     </div>
                     <div className="bg-white/10 p-4 rounded-lg flex items-center space-x-4">
@@ -117,8 +108,17 @@ const Home: React.FC = () => {
                         <Wrench className="text-white w-6 h-6" />
                       </div>
                       <div>
-                        <h4 className="font-semibold text-white">Expert Service</h4>
-                        <p className="text-xs text-blue-200">Experienced Technicians</p>
+                        <h4 className="font-semibold text-white">Used Parts Specialists</h4>
+                        <p className="text-xs text-blue-200">Tested half-cut spares & assemblies.</p>
+                      </div>
+                    </div>
+                    <div className="bg-white/10 p-4 rounded-lg flex items-center space-x-4">
+                      <div className="bg-blue-600 p-3 rounded-full">
+                        <Car className="text-white w-6 h-6" />
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-white">Scrap Car Program</h4>
+                        <p className="text-xs text-blue-200">We buy scrap cars for parts sourcing.</p>
                       </div>
                     </div>
                   </div>
@@ -141,8 +141,8 @@ const Home: React.FC = () => {
                         <CheckCircle2 size={24} className="text-blue-400" />
                      </div>
                      <div>
-                        <p className="text-lg font-bold text-white leading-tight">Operating since 1983</p>
-                        <p className="text-sm text-blue-200 mt-1 leading-snug">40+ years of trusted service in Sungai Petani, Kedah.</p>
+                        <p className="text-lg font-bold text-white leading-tight">Operating since 1951</p>
+                        <p className="text-sm text-blue-200 mt-1 leading-snug">70+ years of trusted service in Sungai Petani, Kedah.</p>
                      </div>
                   </div>
 
@@ -175,7 +175,7 @@ const Home: React.FC = () => {
                      </div>
                      <div>
                         <p className="text-lg font-bold text-white leading-tight">Serving all Malaysia</p>
-                        <p className="text-sm text-blue-200 mt-1 leading-snug">Kedah HQ with nationwide delivery.</p>
+                        <p className="text-sm text-blue-200 mt-1 leading-snug">Sungai Petani, Kedah HQ with nationwide delivery.</p>
                      </div>
                   </div>
 
@@ -299,7 +299,39 @@ const Home: React.FC = () => {
                      <p className="text-slate-600 mb-6 flex-grow">
                         Long-lasting batteries for cars, MPVs and lorries, with installation services available. We check your alternator and charging system to ensure your new battery lasts.
                      </p>
-                     <Link to="/services" className="text-brand-blue font-semibold text-sm flex items-center group-hover:text-blue-700 mt-auto">
+                     <Link to="/services/battery-solutions" className="text-brand-blue font-semibold text-sm flex items-center group-hover:text-blue-700 mt-auto">
+                        See Details <ArrowRight size={16} className="ml-1 opacity-0 group-hover:opacity-100 transition-opacity" />
+                     </Link>
+                  </div>
+               </FadeIn>
+
+               {/* 7. Workshop Services */}
+               <FadeIn delay={700} className="h-full">
+                  <div className="bg-white rounded-2xl p-8 border border-gray-100 shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 group h-full flex flex-col">
+                     <div className="w-14 h-14 bg-gray-50 rounded-xl flex items-center justify-center text-brand-navy group-hover:bg-brand-blue group-hover:text-white transition-colors mb-6 flex-shrink-0">
+                        <Wrench size={28} />
+                     </div>
+                     <h3 className="text-xl font-bold text-brand-navy mb-3">Workshop Services</h3>
+                     <p className="text-slate-600 mb-6 flex-grow">
+                        Partner workshops for installation, diagnostics, and preventive maintenance. Book labour together with your parts to keep repairs seamless and transparent.
+                     </p>
+                     <Link to="/services/workshop" className="text-brand-blue font-semibold text-sm flex items-center group-hover:text-blue-700 mt-auto">
+                        See Details <ArrowRight size={16} className="ml-1 opacity-0 group-hover:opacity-100 transition-opacity" />
+                     </Link>
+                  </div>
+               </FadeIn>
+
+               {/* 8. Buy Scrap Cars */}
+               <FadeIn delay={800} className="h-full">
+                  <div className="bg-white rounded-2xl p-8 border border-gray-100 shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 group h-full flex flex-col">
+                     <div className="w-14 h-14 bg-gray-50 rounded-xl flex items-center justify-center text-brand-navy group-hover:bg-brand-blue group-hover:text-white transition-colors mb-6 flex-shrink-0">
+                        <Truck size={28} />
+                     </div>
+                     <h3 className="text-xl font-bold text-brand-navy mb-3">Buy Scrap Cars</h3>
+                     <p className="text-slate-600 mb-6 flex-grow">
+                        We purchase accident, flood, and end-of-life vehicles, handle paperwork, and harvest usable parts responsibly. Turn unusable cars into instant cash or parts credit.
+                     </p>
+                     <Link to="/services/buy-scrap-car" className="text-brand-blue font-semibold text-sm flex items-center group-hover:text-blue-700 mt-auto">
                         See Details <ArrowRight size={16} className="ml-1 opacity-0 group-hover:opacity-100 transition-opacity" />
                      </Link>
                   </div>
