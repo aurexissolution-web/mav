@@ -256,7 +256,8 @@ const About: React.FC = () => {
                 <img 
                   src={founder.image}
                   alt={`${founder.name} portrait`}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-contain p-1"
+                  style={{ objectPosition: 'center top' }}
                   loading="lazy"
                   decoding="async"
                 />

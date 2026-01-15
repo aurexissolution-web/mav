@@ -170,7 +170,7 @@ const servicesData: Record<string, ServiceData> = {
       { q: "What documents do I need for a claim?", a: "Insurance policy, cover note, driver's license, and vehicle registration card." },
       { q: "Do you repair chips?", a: "We focus on replacement, but contact us to assess if a repair is possible." }
     ],
-    brandDescription: "Insurance Panel For:",
+    brandDescription: "Recognized insurance partners we can claim with on your behalf:",
     brands: ["RHB", "Allianz", "Pacific Insurance", "Pacific & Orient", "Tokio Marine", "And Others"]
   },
   'battery-solutions': {
@@ -317,7 +317,9 @@ const ServiceDetail: React.FC = () => {
     ? "What We Do"
     : slug === 'buy-scrap-car'
       ? "What We Buy"
-      : "Brands We Trust";
+      : slug === 'windscreen-services'
+        ? "Insurance Panel For"
+        : "Brands We Trust";
   const defaultBrands = slug === 'workshop'
     ? ["Parts Installation", "Diagnostic Scans", "Brake & Suspension", "Engine & Fluid Service", "Air-Con Repair"]
     : slug === 'buy-scrap-car'
