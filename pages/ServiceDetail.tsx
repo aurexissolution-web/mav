@@ -237,8 +237,7 @@ const servicesData: Record<string, ServiceData> = {
       "Parts Installation",
       "Diagnostic Scans",
       "Brake & Suspension",
-      "Engine & Fluid Service",
-      "Air-Con Repair"
+      "Engine & Fluid Service"
     ],
     brandDescription: "Hands-on services we execute daily together with our in-house and partner workshops across Sungai Petani."
   },
@@ -271,7 +270,7 @@ const servicesData: Record<string, ServiceData> = {
       { q: "Can I trade in scrap value for parts credit?", a: "Absolutely—we can offset the amount against new or used parts." },
       { q: "What areas do you cover?", a: "Primarily Kedah, Penang, Perlis, and northern Perak. Contact us for other locations." }
     ],
-    brands: ["Accident Vehicles", "Flood Cars", "Non-Running Units", "Commercial Fleets"],
+    brands: ["Accident Vehicles", "Flood Cars", "Non-Running Units", "Commercial Fleets", "Used Cars", "Old Cars"],
     brandDescription: "Specialized recycling workflows that recover usable components and responsibly dispose of the rest."
   }
 };

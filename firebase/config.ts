@@ -2,14 +2,15 @@ import { initializeApp, getApps, getApp } from 'firebase/app';
 import { getAuth } from 'firebase/auth';
 import { getFirestore } from 'firebase/firestore';
 import { getStorage } from 'firebase/storage';
+import { requireEnv } from '../utils/env';
 
 const firebaseConfig = {
-  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
-  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
-  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
-  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
-  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
-  appId: import.meta.env.VITE_FIREBASE_APP_ID,
+  apiKey: requireEnv('VITE_FIREBASE_API_KEY'),
+  authDomain: requireEnv('VITE_FIREBASE_AUTH_DOMAIN'),
+  projectId: requireEnv('VITE_FIREBASE_PROJECT_ID'),
+  storageBucket: requireEnv('VITE_FIREBASE_STORAGE_BUCKET'),
+  messagingSenderId: requireEnv('VITE_FIREBASE_MESSAGING_SENDER_ID'),
+  appId: requireEnv('VITE_FIREBASE_APP_ID'),
 };
 
 const app = getApps().length ? getApp() : initializeApp(firebaseConfig);

@@ -7,13 +7,20 @@ import {
   ArchiveRestore, Package
 } from 'lucide-react';
 
+type DirectorMember = {
+  name: string;
+  title: string;
+  image: string;
+  placeholder?: boolean;
+};
+
 const founder = { name: "M.A. Veerappan Chettiar", title: "Founder", image: "/founder.png" };
 
-const directorMembers = [
+const directorMembers: DirectorMember[] = [
   { name: "Shanmugam A/L Veerappan", title: "Director", image: "/director-1.png" },
+  { name: "Subramaniam A/L Veerappan", title: "Director", image: "/WhatsApp Image 2026-01-16 at 18.44.17.jpeg" },
+  { name: "Magalingam A/L Veerappan", title: "Director", image: "/director-2.png" },
   { name: "Arumugam A/L Veerappan", title: "Director", image: "/director-3.png" },
-  { name: "Magalingam A/L Veerappan", title: "Former Director", image: "/director-2.png" },
-  { name: "Awaiting Announcement", title: "Director", image: "", placeholder: true },
 ];
 
 const historyEntries = [
